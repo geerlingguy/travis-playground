@@ -1,10 +1,7 @@
 ---
-language: php
+language: python
 
 before_script:
-  # Install required utilities
-  - sudo apt-get install -y netstat
-
   # OS information
   - uname -a
 
