@@ -1,8 +1,18 @@
-env: []
+---
+language: php
 
 before_script:
+  # Install required utilities
+  - sudo apt-get install -y netstat
+
   # OS information
   - uname -a
+
+  # Installed package information
+  - dpkg --get-selections | grep -v deinstall
+
+  # Running process information
+  - ps aux | less
 
   # CPU information
   - cat /proc/cpuinfo
@@ -11,10 +21,11 @@ before_script:
   - cat /proc/meminfo
   - free -m
 
+  # Network information
+  - netstat -lntu
+
   # Disk information
   - df -h
 
 script:
   - test -y
-
-
