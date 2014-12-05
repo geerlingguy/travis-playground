@@ -1,0 +1,20 @@
+env: []
+
+before_script:
+  # OS information
+  - uname -a
+
+  # CPU information
+  - cat /proc/cpuinfo
+
+  # Memory information
+  - cat /proc/meminfo
+  - free -m
+
+  # Disk information
+  - df -h
+
+script:
+  - test -y
+
+
