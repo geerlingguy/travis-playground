@@ -24,5 +24,17 @@ before_script:
   # Disk information
   - df -h
 
+  # Install VirtualBox and Vagrant
+  - sudo apt-get install dpkg-dev virtualbox-dkms
+  - sudo dpkg -i http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/vagrant_1.3.5_x86_64.deb
+  - sudo apt-get install linux-headers-$(uname -r)
+  - sudo dpkg-reconfigure virtualbox-dkms
+
+  - vagrant -v
+  - vboxmanage -v
+
 script:
-  - test -y
+  - vagrant -v
+  - vboxmanage -v
+
+# https://keyholesoftware.com/2012/12/05/building_vagrant_boxes_with_veewee_on_travis/
