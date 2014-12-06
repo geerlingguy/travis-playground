@@ -2,6 +2,8 @@
 language: python
 
 before_script:
+  - sudo apt-get update
+
   # OS information
   - uname -a
 
