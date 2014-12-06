@@ -9,7 +9,7 @@ before_script:
   - dpkg --get-selections | grep -v deinstall
 
   # Running process information
-  - ps aux | less
+  - ps aux
 
   # CPU information
   - cat /proc/cpuinfo
