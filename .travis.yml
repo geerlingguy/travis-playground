@@ -31,7 +31,7 @@ before_script:
   - sudo apt-get install dpkg-dev virtualbox-dkms
   - wget -O vagrant.deb https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.5_x86_64.deb
   - sudo dpkg -i vagrant.deb
-  - sudo apt-get install linux-headers-$(uname -r)
+  # - sudo apt-get install linux-headers-$(uname -r)
   - sudo dpkg-reconfigure virtualbox-dkms
 
 script:
