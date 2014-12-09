@@ -31,14 +31,14 @@ before_script:
   - sudo apt-get install -y dpkg-dev virtualbox-dkms
   - wget -O vagrant.deb https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.5_x86_64.deb
   - sudo dpkg -i vagrant.deb
-  - sudo apt-get install -y linux-headers-$(uname -r)
+  # - sudo apt-get install -y linux-headers-$(uname -r)
   - sudo dpkg-reconfigure virtualbox-dkms
 
 script:
   - vagrant -v
   - vboxmanage -v
 
-  - vagrant init
+  - vagrant init hashicorp/precise32
   - vagrant up
 
 # https://keyholesoftware.com/2012/12/05/building_vagrant_boxes_with_veewee_on_travis/
